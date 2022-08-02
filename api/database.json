@@ -1,0 +1,89 @@
+{
+  "plumbers": [
+    {
+      "id": 1,
+      "name": "Maude"
+    },
+    {
+      "id": 2,
+      "name": "Marge"
+    }
+  ],
+  "completions": [
+    {
+      "id": 1,
+      "plumberId": 1,
+      "requestId": 3,
+      "date_created": 93938234040
+    },
+    {
+      "id": 2,
+      "plumberId": 2,
+      "requestId": 2,
+      "date_created": 93938234030
+    },
+    {
+      "id": 7,
+      "requestId": 6,
+      "plumberId": 1,
+      "date_created": 1659449557898
+    },
+    {
+      "id": 8,
+      "requestId": 7,
+      "plumberId": 2,
+      "date_created": 1659450192331
+    }
+  ],
+  "requests": [
+    {
+      "id": 1,
+      "description": "Aut sint voluptatem fugit eius quas molestiae modi.",
+      "address": "34445 Bianka Ports",
+      "budget": 400,
+      "neededBy": "2022-08-27"
+    },
+    {
+      "id": 2,
+      "description": "Get the ants out of my washing machine and toilet",
+      "address": "1 Street St",
+      "budget": 10000,
+      "neededBy": "2023-12-31"
+    },
+    {
+      "description": "Take out the trash :(",
+      "address": "112 112 112 112",
+      "budget": "100000",
+      "neededBy": "1997-02-19",
+      "id": 3
+    },
+    {
+      "description": "Scoop up the nuclear waste",
+      "address": "home",
+      "budget": "1",
+      "neededBy": "1986-04-22",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "description": "Wash the dog silverware",
+      "address": "3",
+      "budget": "433",
+      "neededBy": "2022-08-18"
+    },
+    {
+      "id": 6,
+      "description": "Get the racoons out of the fridge",
+      "address": "3",
+      "budget": "3",
+      "neededBy": "2022-08-09"
+    },
+    {
+      "id": 7,
+      "description": "Water the mailbox",
+      "address": "3",
+      "budget": "4",
+      "neededBy": "2022-08-10"
+    }
+  ]
+}

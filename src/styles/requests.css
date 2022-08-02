@@ -1,0 +1,17 @@
+li {
+    margin: .7em;
+    padding: .1em;
+    border: 1px solid aliceblue;
+}
+
+li button {
+    text-align: right;
+}
+
+.hide {
+    display: none;
+}
+
+.completion {
+    background-color: darkgray;
+}

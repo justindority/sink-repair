@@ -1,0 +1,13 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    padding: .8em;
+}
+
+.label {
+    font-size: large;
+}
+
+.button {
+    margin: .8em;
+}
