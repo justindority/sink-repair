@@ -5,10 +5,10 @@ import { fetchRequests, fetchPlumbers, fetchCompletions } from "./dataAccess.js"
 const mainContainer = document.querySelector("#container")
 
 const render = () => {
-    fetchRequests()
+    fetchCompletions()
 
     .then(() => fetchPlumbers())
-    .then(() => fetchCompletions())
+    .then(() => fetchRequests())
     .then(
         () => {
             mainContainer.innerHTML = SinkRepair()

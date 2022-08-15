@@ -16,49 +16,39 @@ const findPlumber = (completion) => {
     return matchedPlumber.name
 }
 
-//function to find the description of completed requests, called during the map while creating html
-const findDescription = (completion) => {
-    const requests = getRequests()
-    let matchedRequest = requests.find(request => {return request.id === completion.requestId})
-    return matchedRequest.description
-}
 
 //function to hide descriptions if they've already been completed
-const shouldIHide = (request) => {
+const findCompletion = (request) => {
     const completions = getCompletions()
-    for (const completion of completions) {
-        if(completion.requestId === request.id){
-            return "hide"
-        }
-    }
-    return "show"
+    let foundCompletion = completions.find(completion => {return completion.requestId === request.id})
+    return foundCompletion
 }
 
 //generates html for requests
 export const requestsHtml = () => {
     const requests = getRequests()
     const completions = getCompletions()
+    let completed = false
+
 
     let html = `
         <ul>
             ${
                 requests.map(request => {
-                    return `<li class="${shouldIHide(request)}">${request.description}
+                    let foundCompletion = findCompletion(request)
+                    if(foundCompletion){
+                        return `<li class="completion">${request.description} (Completed by ${findPlumber(foundCompletion)})</li>`
+                    } else {
+                        return `<li class="request">${request.description}
                     <select class="plumbers" id="plumbers">
                     <option value="">Choose</option>
                     ${plumbersMap(request)}
                     </select>
                     <button id="request--${request.id}">Delete</button></li>`
-                }).join("")
-            }
-            ${
-                completions.map(completion => {
+                }}).join("")
+                    }
 
-                    return `<li class="completion">${findDescription(completion)} (Completed by ${findPlumber(completion)})</li>`
-                }).join("")
-            }
-        </ul>
-    `
+        </ul>`
 
     return html
 }
@@ -86,7 +76,6 @@ mainContainer.addEventListener(
             const requests = getRequests()
 
             let completionObject = {
-                id: requests.length + 1,
                 requestId: parseInt(requestId),
                 plumberId: parseInt(plumberId),
                 date_created: Date.now()

@@ -6,7 +6,18 @@ export const fetchRequests = () => {
         .then(
             (serviceRequests) => {
                 // Store the external state in application state
-                applicationState.requests = serviceRequests
+                for (const request of serviceRequests) {
+                    request.completed = false
+                    for (const completion of applicationState.completions) {
+                        if(request.id === completion.requestId){
+                            request.completed = true
+                        }
+                    }
+                }
+                let newRequests = serviceRequests.sort((a,b) => {
+                    return a.completed - b.completed
+                })
+                applicationState.requests = newRequests
             }
         )
 }
