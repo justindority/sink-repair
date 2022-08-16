@@ -1,4 +1,4 @@
-const API = "http://localhost:8088"
+const API = "https://oyster-app-dw2ro.ondigitalocean.app"
 
 export const fetchRequests = () => {
     return fetch(`${API}/requests`)

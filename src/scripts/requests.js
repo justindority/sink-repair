@@ -40,13 +40,13 @@ export const requestsHtml = () => {
                         return `<li class="completion">${request.description} (Completed by ${findPlumber(foundCompletion)})</li>`
                     } else {
                         return `<li class="request">${request.description}
-                    <select class="plumbers" id="plumbers">
-                    <option value="">Choose</option>
-                    ${plumbersMap(request)}
-                    </select>
-                    <button id="request--${request.id}">Delete</button></li>`
+                                <select class="plumbers" id="plumbers">
+                                <option value="">Choose</option>
+                                ${plumbersMap(request)}
+                                </select>
+                                <button id="request--${request.id}">Delete</button></li>`
                 }}).join("")
-                    }
+            }
 
         </ul>`
 
